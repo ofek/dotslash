@@ -52,15 +52,14 @@ test-feature-scenarios:
 [group('Downstream')]
 [working-directory: 'python']
 check-python:
-  uvx ruff check
-  uvx ruff format --check --diff
+  ufmt diff
+  ufmt check
 
 # Fix static analysis issues for the Python package.
 [group('Downstream')]
 [working-directory: 'python']
 fix-python:
-  uvx ruff check --fix
-  uvx ruff format
+  ufmt format
 
 # Test the Python package.
 [group('Downstream')]
