@@ -52,14 +52,14 @@ test-feature-scenarios:
 [group('Downstream')]
 [working-directory: 'python']
 check-python:
-  uv run --no-project --with-requirements requirements-fmt.txt -- ufmt diff
-  uv run --no-project --with-requirements requirements-fmt.txt -- ufmt check
+  uv run --no-project --with-requirements requirements-fmt.txt -- ufmt diff src tests
+  uv run --no-project --with-requirements requirements-fmt.txt -- ufmt check src tests
 
 # Fix static analysis issues for the Python package.
 [group('Downstream')]
 [working-directory: 'python']
 fix-python:
-  uv run --no-project --with-requirements requirements-fmt.txt -- ufmt format
+  uv run --no-project --with-requirements requirements-fmt.txt -- ufmt format src tests
 
 # Test the Python package.
 [group('Downstream')]
