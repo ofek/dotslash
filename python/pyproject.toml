@@ -34,9 +34,6 @@ Homepage = "https://dotslash-cli.com"
 Tracker = "https://github.com/facebook/dotslash/issues"
 Source = "https://github.com/facebook/dotslash"
 
-[tool.black]
-target-version = ["py310"]
-
 [tool.hatch.metadata.hooks.custom]
 
 [tool.hatch.metadata.hooks.fancy-pypi-readme]
@@ -73,5 +70,12 @@ repair-wheel-command = ""
 [tool.cibuildwheel.linux]
 environment-pass = ["DOTSLASH_SOURCE", "DOTSLASH_VERSION"]
 
+[tool.black]
+target-version = ["py310"]
+
 [tool.usort]
 first_party_detection = false
+
+[tool.ufmt]
+formatter = "ruff-api"
+sorter = "ruff-api"
